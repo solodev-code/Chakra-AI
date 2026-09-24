@@ -1,287 +1,214 @@
-Chakar AI
+<div align="center">
 
-Your Personal AI Assistant for Chat, Voice, Search, Automation & AI Tasks
+```
+ ██████╗██╗  ██╗ █████╗ ██╗  ██╗ █████╗ ██████╗
+██╔════╝██║  ██║██╔══██╗██║ ██╔╝██╔══██╗██╔══██╗
+██║     ███████║███████║█████╔╝ ███████║██████╔╝
+██║     ██╔══██║██╔══██║██╔═██╗ ██╔══██║██╔══██╗
+╚██████╗██║  ██║██║  ██║██║  ██╗██║  ██║██║  ██║
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+          A  I    ·    v o i c e   ·   b r a i n   ·   h a n d s
+```
 
-Chakar AI is a Python-based intelligent personal assistant that combines AI conversation, voice interaction, real-time search, desktop automation, image generation, and task-oriented assistance in one application.
+### `> talk. search. decide. execute.`
 
-Chat → Understand → Search → Decide → Execute → Respond
+![Python](https://img.shields.io/badge/Python-3.x-0d1117?style=for-the-badge&logo=python&logoColor=00e5ff&labelColor=0d1117&color=00e5ff)
+![PyQt5](https://img.shields.io/badge/GUI-PyQt5-0d1117?style=for-the-badge&logo=qt&logoColor=39ff14&labelColor=0d1117&color=39ff14)
+![Voice](https://img.shields.io/badge/Voice-Enabled-0d1117?style=for-the-badge&logoColor=ff2bd6&labelColor=0d1117&color=ff2bd6)
+![Status](https://img.shields.io/badge/Status-Experimental-0d1117?style=for-the-badge&labelColor=0d1117&color=ffb800)
 
-✨ Features
+**Chakar AI is a Python desktop assistant that listens, thinks, searches the web, and operates your computer, all from one window.**
 
-🤖 AI Chat — Natural-language conversations and questions
+</div>
 
-🎯 Task-Oriented Assistance — Understand commands and perform supported tasks
+---
 
-🎙️ Speech-to-Text — Interact with Chakar using voice
+## `[ 00 ]` SYSTEM BOOT
 
-🔊 Text-to-Speech — Receive spoken responses
+```console
+$ python Main.py
 
-🌐 Real-Time Search — Search the web for current information
+[ OK ] Loading environment ............ .env
+[ OK ] Starting GUI ................... PyQt5
+[ OK ] Mic interface .................. Speech-to-Text
+[ OK ] Voice output ................... Edge TTS
+[ OK ] Brain online ................... Groq + Cohere
+[ OK ] Search engine .................. Real-time
+[ OK ] Automation layer ............... Desktop tasks
 
-⚙️ Desktop Automation — Execute supported computer actions
+>>> Chakar is ready. Say something.
+```
 
-🖼️ Image Generation — Generate images using AI services
+---
 
-💬 Chat History — Store conversation data
+## `[ 01 ]` CAPABILITY MATRIX
 
-🖥️ PyQt5 GUI — Desktop graphical interface
+| Module | What it does | Powered by |
+|:--|:--|:--|
+| 🧠 **Brain** | Natural-language chat and questions | Groq, Cohere |
+| 🎙️ **Ears** | Talk to Chakar with your voice | Speech-to-Text |
+| 🔊 **Voice** | Chakar talks back | Edge TTS, Pygame |
+| 🌐 **Eyes** | Live web search for current info | Google Search, BeautifulSoup |
+| ⚙️ **Hands** | Open apps, run supported computer actions | AppOpener, Selenium, Keyboard |
+| 🖼️ **Imagination** | AI image generation | Image APIs |
+| 🌍 **Tongue** | Translate text between languages | mtranslate |
+| 🎵 **Media** | YouTube and media searches | PyWhatKit |
+| 💬 **Memory** | Chat history stored locally | `Chatlog.json` |
+| 🖥️ **Face** | Desktop interface | PyQt5, Pillow |
 
-🌍 Translation — Translate supported text between languages
+---
 
-🎵 Media / YouTube Tasks — Perform supported media searches and actions
+## `[ 02 ]` THE LOOP
 
-🧠 What Can Chakar AI Do?
+```mermaid
+flowchart TD
+    U([👤 YOU<br/>text or voice]) --> G[🖥️ GUI]
+    G --> C{⚡ Command<br/>Processing}
+    C -->|question| A[🧠 AI Chat] --> API[(AI APIs)]
+    C -->|needs fresh info| S[🌐 Real-Time Search] --> W[(Web)]
+    C -->|do something| X[⚙️ Automation] --> D[(Desktop)]
+    API --> R[📨 Response]
+    W --> R
+    D --> R
+    R --> T1[📝 Text]
+    R --> T2[🔊 Voice]
+```
 
-💬 Conversation
+`Chat → Understand → Search → Decide → Execute → Respond`
 
+---
+
+## `[ 03 ]` TRY THESE COMMANDS
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**💬 Ask**
+```text
 What is Artificial Intelligence?
 Explain Python.
 How does Django work?
 Give me project ideas.
 Help me learn machine learning.
+```
 
-🎯 Task Execution
+</td>
+<td width="33%" valign="top">
 
+**⚙️ Do**
+```text
 Open Chrome.
 Open VS Code.
 Open Calculator.
+Open Notepad.
+```
+
+</td>
+<td width="33%" valign="top">
+
+**🌐 Find**
+```text
 Search Google for Python tutorials.
 Search YouTube for Django tutorials.
+Find information about AI.
+```
 
-🎙️ Voice Interaction
+</td>
+</tr>
+</table>
 
+**🎙️ Voice mode**
+
+```text
 "Hey Chakar, open Chrome."
 "Search for Python tutorials."
 "Tell me about machine learning."
+```
 
-🏗️ Architecture
+**🌍 Translate**
 
-                         ┌───────────────────┐
-                         │       USER        │
-                         └─────────┬─────────┘
-                                   │
-                          Text / Voice Input
-                                   │
-                                   ▼
-                         ┌───────────────────┐
-                         │       GUI         │
-                         │     Frontend      │
-                         └─────────┬─────────┘
-                                   │
-                                   ▼
-                         ┌───────────────────┐
-                         │ Command Processing│
-                         └─────────┬─────────┘
-                                   │
-                    ┌──────────────┼──────────────┐
-                    │              │              │
-                    ▼              ▼              ▼
-                 AI Chat       Real-Time       Automation
-                    │            Search            │
-                    ▼              ▼               ▼
-                 AI APIs       Web Search       Desktop
-                    │            Engine           Tasks
-                    └──────────────┼──────────────┘
-                                   │
-                                   ▼
-                         ┌───────────────────┐
-                         │     Response      │
-                         └─────────┬─────────┘
-                                   │
-                              ┌────┴────┐
-                              ▼         ▼
-                            Text      Voice
+```text
+Translate "Hello, how are you?" into Hindi.
+```
 
-📁 Project Structure
+---
 
+## `[ 04 ]` INSTALL IN 60 SECONDS
+
+```bash
+# 1 · clone
+git clone https://github.com/YOUR-USERNAME/chakar-ai.git
+cd chakar-ai
+
+# 2 · virtual environment (Windows)
+python -m venv .venv
+.venv\Scripts\activate
+
+# 3 · dependencies
+pip install -r Requirements.txt
+
+# 4 · launch
+python Main.py
+```
+
+**Before launching, create a `.env` file in the project root:**
+
+```env
+GROQ_API_KEY=your_groq_api_key
+COHERE_API_KEY=your_cohere_api_key
+```
+
+> 💡 Use the exact variable names your source code expects.
+
+---
+
+## `[ 05 ]` FILE MAP
+
+```text
 Chakar-AI/
-│
-├── .vscode/
-│   └── settings.json
-│
-├── Backend/
-│   ├── Automation.py
-│   ├── Chatbot.py
-│   ├── gpt.py
-│   ├── ImageGeneration.py
-│   ├── Model.py
-│   ├── RealtimeSearchEngine.py
-│   ├── SpeechToText.py
-│   └── TextToSpeech.py
-│
-├── Data/
-│   ├── Chatlog.json
-│   └── Voice.html
-│
-├── Frontend/
-│   ├── Files/
-│   │   ├── Database.data
-│   │   ├── ImageGeneration.data
-│   │   ├── Mic.data
-│   │   ├── Responses.data
-│   │   └── Status.data
-│   │
-│   ├── Graphics/
-│   │   ├── Chats.png
-│   │   ├── Close.png
-│   │   ├── Home.png
-│   │   ├── Jarvis.gif
-│   │   ├── Maximize.png
-│   │   ├── Mic_off.png
-│   │   ├── Mic_on.png
-│   │   ├── Minimize.png
-│   │   ├── Minimize2.png
-│   │   └── Settings.png
-│   │
-│   └── GUI.py
-│
-├── .env
-├── Main.py
+├── Main.py                     ← entry point
 ├── Requirements.txt
-└── README.md
-
-__pycache__ and .venv are local/generated files and should normally not be committed to GitHub.
-
-🧩 Backend Modules
-
-File
-
-Purpose
-
-Automation.py
-
-Desktop and task automation
-
-Chatbot.py
-
-Chatbot and conversation logic
-
-gpt.py
-
-AI/LLM functionality
-
-ImageGeneration.py
-
-AI image generation
-
-Model.py
-
-Model-related functionality
-
-RealtimeSearchEngine.py
-
-Real-time web search
-
-SpeechToText.py
-
-Voice-to-text processing
-
-TextToSpeech.py
-
-Text-to-speech processing
-
-🖥️ Frontend
-
-The desktop interface is implemented in:
-
-Frontend/GUI.py
-
-Visual assets are stored in:
-
-Frontend/Graphics/
-
-Examples include:
-
-Home.png
-
-Chats.png
-
-Settings.png
-
-Mic_on.png
-
-Mic_off.png
-
-Jarvis.gif
-
-Close.png
-
-Minimize.png
-
-Maximize.png
-
-🗂️ Data
-
-Application data is stored in the Data/ directory.
-
-Data/
-├── Chatlog.json
-└── Voice.html
-
-Chatlog.json is used for chat/conversation data.
-
-🛠️ Technology Stack
-
-Language
-
-Python
-
-AI / LLM
-
-Groq
-
-Cohere
-
-AI model APIs
-
-Voice & Audio
-
-Edge TTS
-
-Pygame
-
-Speech-to-text components
-
-Automation
-
-AppOpener
-
-PyWhatKit
-
-Keyboard
-
-Selenium
-
-WebDriver Manager
-
-Web
-
-Requests
-
-BeautifulSoup
-
-Google Search
-
-Selenium
-
-GUI
-
-PyQt5
-
-Pillow
-
-Rich
-
-Utilities
-
-python-dotenv
-
-mtranslate
-
-📦 Requirements
-
-The project dependencies are listed in Requirements.txt.
-
+├── .env                        ← secrets (never commit)
+│
+├── Backend/                    ← the machinery
+│   ├── Automation.py           ⚙️  desktop & task automation
+│   ├── Chatbot.py              💬  conversation logic
+│   ├── gpt.py                  🧠  AI / LLM functionality
+│   ├── ImageGeneration.py      🖼️  image generation
+│   ├── Model.py                🧭  model-related logic
+│   ├── RealtimeSearchEngine.py 🌐  live web search
+│   ├── SpeechToText.py         🎙️  voice → text
+│   └── TextToSpeech.py         🔊  text → voice
+│
+├── Frontend/                   ← the face
+│   ├── GUI.py                  🖥️  PyQt5 interface
+│   ├── Files/                  ▫️  runtime state (mic, status, responses...)
+│   └── Graphics/               ▫️  icons, Jarvis.gif, buttons
+│
+└── Data/
+    ├── Chatlog.json            💾  conversation history
+    └── Voice.html
+```
+
+---
+
+## `[ 06 ]` TECH STACK
+
+| Layer | Tools |
+|:--|:--|
+| **Language** | `Python` |
+| **AI / LLM** | `Groq` · `Cohere` |
+| **Voice & Audio** | `Edge TTS` · `Pygame` · Speech-to-Text |
+| **Automation** | `AppOpener` · `PyWhatKit` · `Keyboard` · `Selenium` · `WebDriver Manager` |
+| **Web** | `Requests` · `BeautifulSoup` · `googlesearch-python` |
+| **GUI** | `PyQt5` · `Pillow` · `Rich` |
+| **Utilities** | `python-dotenv` · `mtranslate` |
+
+<details>
+<summary><b>📦 Full Requirements.txt</b></summary>
+
+```text
 python-dotenv
 groq
 AppOpener
@@ -299,274 +226,157 @@ pygame
 edge-tts
 PyQt5
 webdriver-manager
+```
 
-🚀 Installation
+</details>
 
-1. Clone the repository
+---
 
-git clone https://github.com/YOUR-USERNAME/chakar-ai.git
-cd chakar-ai
+## `[ 07 ]` ROADMAP · UPGRADE PATH
 
-2. Create a virtual environment
+```text
+CHATBOT ──────▶ ASSISTANT ──────▶ AGENT
+  (chat)       (search + tasks)   (plans + acts on its own)
+```
 
-Windows:
+<details>
+<summary><b>🧠 Intelligence</b></summary>
 
-python -m venv .venv
+- [ ] Long-term memory
+- [ ] Better context awareness
+- [ ] Conversation memory
+- [ ] Intent classification
+- [ ] Multi-step task planning
+- [ ] Agent workflows
 
-Activate it:
+</details>
 
-.venv\Scripts\activate
+<details>
+<summary><b>💻 Computer Control</b></summary>
 
-3. Install dependencies
+- [ ] File management
+- [ ] Application management
+- [ ] System monitoring
+- [ ] Mouse control
+- [ ] Keyboard control
+- [ ] Screenshot understanding
 
-pip install -r Requirements.txt
+</details>
 
-4. Configure environment variables
+<details>
+<summary><b>🌐 Online Services</b></summary>
 
-Create a .env file in the project root.
+- [ ] Weather
+- [ ] News
+- [ ] Email
+- [ ] Calendar
+- [ ] Reminders
+- [ ] Maps
+- [ ] Additional service integrations
 
-Example:
+</details>
 
-GROQ_API_KEY=your_groq_api_key
-COHERE_API_KEY=your_cohere_api_key
+<details>
+<summary><b>📚 Knowledge</b></summary>
 
-Use the variable names required by your actual source code.
+- [ ] PDF analysis
+- [ ] RAG
+- [ ] Personal knowledge base
+- [ ] Document search
+- [ ] Vector database
 
-5. Run Chakar AI
+</details>
 
-python Main.py
+<details>
+<summary><b>👁️ Multimodal AI</b></summary>
 
-🔐 Environment & Security
+- [ ] Image understanding
+- [ ] OCR
+- [ ] Screenshot analysis
+- [ ] Vision-based automation
+- [ ] Camera input
 
-Never publish API keys or other secrets.
+</details>
 
-Recommended .gitignore:
+<details>
+<summary><b>📱 Platforms</b></summary>
 
+- [ ] Web version
+- [ ] Android application
+- [ ] Mobile companion
+- [ ] Cloud synchronization
+
+</details>
+
+---
+
+## `[ 08 ]` SAFETY PROTOCOL
+
+> ⚠️ Chakar can call external services and, depending on configuration, act on your computer. Treat it like a powerful tool.
+
+| ✅ Do | ❌ Don't |
+|:--|:--|
+| Keep API keys private | Commit `.env` to Git |
+| Review automation actions before use | Run unknown code |
+| Use a virtual environment | Grant unnecessary permissions |
+| Keep dependencies updated | Ignore leaked keys |
+
+**Recommended `.gitignore`:**
+
+```gitignore
 .venv/
 venv/
 __pycache__/
 *.pyc
 .env
+```
 
-Before pushing to GitHub, make sure .env is not tracked:
+Check before pushing with `git status`. If `.env` was ever committed, remove it from tracking **and rotate the exposed API keys.**
 
-git status
+---
 
-If .env was previously committed, remove it from Git tracking and rotate the exposed API keys.
+## `[ 09 ]` KNOWN LIMITS
 
-🔄 How Chakar AI Works
+Chakar AI is an **educational and experimental** project. Results may vary depending on:
 
-USER
-  │
-  ▼
-Text / Voice Input
-  │
-  ▼
-GUI
-  │
-  ▼
-Command Processing
-  │
-  ├──────────────┬──────────────┐
-  ▼              ▼              ▼
-Chat           Search       Automation
-  │              │              │
-  ▼              ▼              ▼
-AI API        Web Search     Desktop Task
-  │              │              │
-  └──────────────┼──────────────┘
-                 ▼
-             Response
-                 │
-           ┌─────┴─────┐
-           ▼           ▼
-         Text        Speech
+`Operating system` · `Installed apps` · `Internet connection` · `Browser setup` · `Third-party APIs` · `API availability`
 
-💡 Example Commands
+Not every command works on every machine.
 
-AI Chat
+---
 
-Hello Chakar.
-What is artificial intelligence?
-Explain machine learning.
-Help me learn Python.
-Give me project ideas.
+## `[ 10 ]` CONTRIBUTE
 
-Computer Tasks
-
-Open Chrome.
-Open VS Code.
-Open Calculator.
-Open Notepad.
-
-Web Search
-
-Search Google for Python tutorials.
-Search YouTube for Django tutorials.
-Find information about artificial intelligence.
-
-Translation
-
-Translate "Hello, how are you?" into Hindi.
-
-🔮 Future Roadmap
-
-🧠 Intelligence
-
-Long-term memory
-
-Better context awareness
-
-Conversation memory
-
-Intent classification
-
-Multi-step task planning
-
-Agent workflows
-
-💻 Computer Control
-
-File management
-
-Application management
-
-System monitoring
-
-Mouse control
-
-Keyboard control
-
-Screenshot understanding
-
-🌐 Online Services
-
-Weather
-
-News
-
-Email
-
-Calendar
-
-Reminders
-
-Maps
-
-Additional service integrations
-
-📚 Knowledge
-
-PDF analysis
-
-RAG
-
-Personal knowledge base
-
-Document search
-
-Vector database
-
-👁️ Multimodal AI
-
-Image understanding
-
-OCR
-
-Screenshot analysis
-
-Vision-based automation
-
-Camera input
-
-📱 Platforms
-
-Web version
-
-Android application
-
-Mobile companion
-
-Cloud synchronization
-
-🔒 Safety
-
-Chakar AI can interact with external services and, depending on its configuration, perform actions on the local computer.
-
-For safe use:
-
-Keep API keys private.
-
-Review automation actions before using them.
-
-Do not execute unknown code.
-
-Keep dependencies updated.
-
-Use a virtual environment.
-
-Avoid giving the assistant unnecessary permissions.
-
-⚠️ Disclaimer
-
-Chakar AI is an educational and experimental personal AI assistant.
-
-Some features may depend on:
-
-Operating system
-
-Installed applications
-
-Internet connection
-
-Browser configuration
-
-Third-party APIs
-
-API availability
-
-Not every command is guaranteed to work on every system.
-
-🤝 Contributing
-
-Contributions, bug reports, and feature suggestions are welcome.
-
+```bash
 git checkout -b feature/new-feature
+# make changes → test → commit
+git push origin feature/new-feature
+# open a Pull Request
+```
 
-Make your changes, test them, and submit a pull request.
+Bug reports and feature ideas are welcome.
 
-📄 License
+---
 
-This project is currently intended for educational and personal development purposes.
+## `[ 11 ]` LICENSE
 
-If you plan to distribute the project publicly, add an appropriate open-source license after checking the licenses and terms of the project's dependencies, APIs, and included assets.
+Currently intended for educational and personal development use. Before distributing publicly, add an open-source license after checking the terms of your dependencies, APIs, and bundled assets.
 
-👨‍💻 Author
+---
 
-Your Name
+<div align="center">
 
-GitHub: YOUR_GITHUB_URL
+### 👨‍💻 Built by **Your Name**
 
-LinkedIn: YOUR_LINKEDIN_URL
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://github.com/solodev-code)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0d1117?style=for-the-badge&logo=linkedin&logoColor=00e5ff)](https://www.linkedin.com/in/yoursunny369/)
 
-⭐ Support
+**If Chakar impressed you, drop a ⭐ on the repo.**
 
-If you find Chakar AI useful or interesting, consider giving the repository a ⭐ on GitHub.
+```
+💬 CHAT → 🧠 UNDERSTAND → 🔎 SEARCH → 🎯 PLAN → ⚙️ EXECUTE → 🔊 RESPOND
+```
 
-🚀 Chakar AI Vision
+`> session end. Chakar AI, your personal AI, ready when you are.`
 
-From Chatbot → AI Assistant → AI Agent
-
-💬 CHAT
-   ↓
-🧠 UNDERSTAND
-   ↓
-🔎 SEARCH
-   ↓
-🎯 PLAN
-   ↓
-⚙️ EXECUTE
-   ↓
-🔊 RESPOND
-
-Chakar AI — A personal AI assistant designed to chat, understand, search, and perform tasks. 🤖
+</div>
